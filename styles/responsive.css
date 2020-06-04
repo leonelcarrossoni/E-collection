@@ -1,0 +1,44 @@
+
+@media /* conjunto de regras */ (max-width: 900px){ /* quando a largura for maior que 900px receberá um conjunto de regras */
+
+    #page-home{
+        background-position-x: 70vw; /*some a imagem */
+    }
+    #page-home .content {
+        align-items: center;
+        text-align: center;
+    }
+    #page-home header a {
+        position: absolute; /* cada elemento é uma layer, um em cima do outro */
+        bottom: 48px; /* coloca o cadastro alinhao abaixo */
+        left: 50%; /* centraliza */
+        transform: translateX(-50%); /* Faz o texto encontrar o ponto médio e centralizar */
+    }
+    #page-home main{
+        align-items: center;
+    }
+
+    #page-search-results .cards{
+        grid-template-columns: 1fr;
+        
+    }
+
+    #page-search-results .cards img{
+        height: 200px;
+        
+    }
+
+}
+
+@media (min-width: 1700px) {
+    #page-home {
+        background-position-x: 40vw;
+    }
+}
+
+@media (max-height: 760px) { /*Na janela de inspecionar testamos os tamanhos e definimos qual é a altura máxima que irá pegar */
+    #page-home {
+        background-position-y: 200px; /* Estava em bottom e agora está fixo, não muda mais */
+    }
+
+}

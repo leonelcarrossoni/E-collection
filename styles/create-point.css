@@ -1,0 +1,169 @@
+#page-create-point{
+    width: 90%; /*Largura máxima de 90px */
+    max-width: 1100px; /* Se chegar a 1100px não aumenta mais */
+    
+    /*alinhamento de caixa (pelo lado de fora da caixa) */
+    margin: 0 auto; /* a margem de cima e embaixo é zero mas nas laterais é preenchido automaticamente */
+}
+
+#page-create-point header {
+    margin-top: 48px;
+    display: flex; /* Deixa tudo um do lado do outro */
+    justify-content: space-between; /* coloca um item para um lado e o outro no outro*/
+    align-items: center;
+}
+
+#page-create-point header a {
+    color: var(--title-color);
+    font-weight: bold;
+    display: flex; /* um item ao lado do outro */
+    align-items: center;
+}
+
+#page-create-point header a span{
+    margin-right: 16px;
+    background-image: url('../assets/arrow-left.svg');
+    display: flex;
+    width: 20px;
+    height: 24px;
+}
+
+form {
+    background-color: white;
+    margin: 80px auto;     /*alinhamento de caixa (pelo lado de fora da caixa) */
+    /*margin-top: 80px; */   /* Colocado dentro de margin. Margem de fora da caixa. Espaço entre o header e form */
+    padding: 64px;/* responsavel pelo preenchimento interno*/
+    border-radius: 8px;
+    max-width: 730px;
+    /* Quando você adiciona o padding e tem setado a largura, ele tende a aumentar o tamanho da caixa, 
+    mudamos isto com o box-sizing para que ele tenha sempre o tamanho da caixa que você definir*/
+   /*box-sizing: border-box; */ /*Adicionado a todos os elemento em main . Por padrão a caixa tem o tamanho do conteúdo. Estamos alterando para tamanho da borda*/
+    
+
+}
+
+form h1{
+    font-size: 36px;
+}
+
+form fieldset {
+    margin-top: 64px;
+    border: 0;
+}
+
+form legend {
+    margin-bottom: 40px;
+}
+
+form legend h2{
+    font-size: 24px;
+}
+
+form .field{
+    flex: 1; /*Faz os campos preencherem toda a caixa */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+form .field-group{
+    display: flex;
+
+}
+
+form input,
+form select {
+    background-color: #f0f0f5;
+    border: 0;
+    padding: 16px 24px;
+    font-size: 16px;
+    outline: none; /* borda em volta da caixa de input quando seleciona */
+    border-radius: 8px;
+}
+
+form select {
+    -webkit-appearance: none; /* no Chrome a seta de selecionar da alguns problemas, então resetamos o estilo */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+form label {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+form .field-group .field + .field { /* apenas o field que é seguido por outro field*/
+    margin-left: 24px; /* espaço entre os 2 campos */
+
+}
+
+form button {
+    width: 260px;
+    height: 56px;
+
+    background-color: var(--primary-color);
+    border-radius: 8px;
+
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: 0;
+
+    margin-top: 40px;
+
+    transition: background-color 400ms; /* transition para a cor do hover */
+ 
+}
+
+form button:hover { /* hover sã as especificações de quando passa o mouse em cima */
+    background-color: #2fb86e;
+}
+
+.items-grid {
+    /*flex é unidimensional (linha ou coluna), já o grid é multidimensional, permite linhas e colunas*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /*  dividi o espaço em 3 frações. /// 
+    Alternativo: 200px 200px 200px p/ 3 colunas de 200px cada*/
+    
+    gap: 16px /* grid tem esta funcionalidade para espaçamento que é mais fácil que utilizar o margin */
+}
+
+.items-grid li {
+    background-color: #f5f5f5;
+    list-style: none; /*apagar bullet points */
+
+    border: 2px solid #f5f5f5;
+    border-radius: 8px; /* arrendondar bordas */
+    height: 180px; /*Altura do quadrado */
+    padding: 32px 24px 16px; /*32 topo, 24 laterais e 16 bottom */
+
+    /*Alinhando itens ao centro */
+    display: flex; /* Alinha um ao lado do outro */
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+
+    cursor: pointer; /*Transforma a seta em mãozinha de clicar */
+}
+
+.items-grid li span {
+    margin-top: 12px;
+    flex: 1; /*Um tamanho que preenche sozinho*/
+    display: flex;
+    align-items: center;
+    color: var(--title-color);
+}
+
+.items-grid li.selected{ /*li.selected juntos quer dizer procura dentro do items-grid, o li que tem a classe selected. 
+    Se estivesse separado estaríamos dizendo que  dentro de li há um elemento que tem a classe selected */
+    background: #e1faec;
+    border: 2px solid #34cb79;
+
+}
+
+/* Para fazer o ponteiro clicar só no pai li e não na imagem e span*/
+.items-grid li img,
+.items-grid li span {
+    pointer-events: none;
+}

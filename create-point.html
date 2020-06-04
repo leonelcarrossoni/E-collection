@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<!--  -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar um ponto de coleta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet"> <!-- referencia o link do google fonts -->
+    <link rel="stylesheet" href="/styles/main.css"> <!-- referencia o estilo conseguido no google fonts que está no arquivo main.css -->
+    <link rel="stylesheet" href="/styles/create-point.css"> 
+    <link rel="stylesheet" href="/styles/responsive.css"> 
+
+
+</head>
+
+<body>
+    
+    <div id="page-create-point">    
+
+        <header>
+            <img src="/assets/logo.svg" alt="Logomarca"> <!-- source = caminho /// alt = alternativa a imagem caso ela não seja encontrada. E também para acessibilidade para leitores -->
+            <a href="index.html">
+                <span></span> <!-- inline  -->
+                Voltar para home
+            </a>
+        </header>    
+        
+        <form action="">
+
+            <h1>Cadastro do ponto de coleta</h1>
+
+            <fieldset>
+                <!-- Para melhorar a semantica. É uma caixa que irá agrupar os campos ao invés de criar outra div -->
+                <legend>
+                    <h2>Dados da entidade</h2>
+                </legend>
+
+                <div class="field">
+                    <label for="name">Nome da entidade</label> <!-- Nome de cima. O for referencia a label ao input -->
+                    <input type="text" name="name" required> <!-- input dos dados /// atributo required torna obrigatorio o preenchimento -->
+                </div>
+
+                <div class="field-group"> <!-- classe será utilizada para agrupar os campos -->
+                    <div class="field">
+                        <label for="address">Endereço<</label>
+                        <input type="text" name="address" required>
+                    </div>
+                    <div class="field">
+                        <label for="address2">Número/Complemento</label>
+                        <input type="text" name="address2" required> <!-- se colocar type Number, só receberá numeros -->
+                    </div>
+
+                </div>
+
+
+                <div class="field-group"> <!-- classe será utilizada para agrupar os campos -->
+                    
+                    <div class="field">
+                        <label for="states">Estado</label>
+                        <select name="uf" required> <!-- Cria campo de seleção -->
+                            <option value="">Selecione o Estado</option>                    
+                        </select>
+
+                        <!-- este input fara que apareça state na barra de endereço mas não aparecerá para o usuário na página. 
+                            Apenas para receber o nome do estado no formato nome -->
+                        <input type="hidden" name="state">
+                    </div>
+
+                    <div class="field">
+                        <label for="city">Cidade</label>
+                        <select name="city" disabled required> <!-- Disabled não possibilita a seleção do campo -->
+                            <option value="">Selecione a Cidade</option>
+
+                        </select>
+                    </div>
+
+
+                </div>
+            </fieldset>
+
+
+
+
+
+                
+            <fieldset>
+                <legend>
+                    <h2>Itens de coleta</h2>
+                </legend>
+
+                <div class="items-grid">
+                    <!-- li geralmente se usa para lista.Dentro uma tag img e do lado span -->
+                    <li data-id="1" > <!-- receberá o fundo /// data-"qualquercoisa" = 1 como identificador-->
+                        <img src="/assets/lampadas.svg" alt="Lâmpadas"> 
+                        <span>Lâmpadas</span>
+                    </li> 
+
+                    <li data-id="2"> 
+                        <img src="/assets/baterias.svg" alt="Pilhas e Baterias"> 
+                        <span>Pilhas e Baterias</span>
+                    </li> 
+
+                    <li data-id="3"> 
+                        <img src="/assets/papeis-papelao.svg" alt="Papéis e Papelão"> 
+                        <span>Papéis e Papelão</span>
+                    </li> 
+
+                    <li data-id="4"> 
+                        <img src="/assets/eletronicos.svg" alt="Resíduos Eletrônicos"> 
+                        <span>Resíduos Eletrônicos</span>
+                    </li> 
+
+                    <li data-id="5"> 
+                        <img src="/assets/organicos.svg" alt="Resíduos Orgânicos"> 
+                        <span>Resíduos Orgânicos</span>
+                    </li> 
+
+                    <li data-id="6"> 
+                        <img src="/assets/oleo.svg" alt="Óleo de Cozinha"> 
+                        <span>Óleo de Cozinha</span>
+                    </li> 
+
+                </div>
+
+                <!-- permite que faça o input dos items selecionados pelo usuario -->
+                <input type="hidden" name="items"> 
+            </fieldset>
+
+            <button type="submit"> Cadastrar ponto de coleta</button>
+
+        </form>                        
+    
+    </div>
+    
+    <script src="/scripts/create-point.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+
+#page-home{
+    height: 100vh; /*viewport height divide a parte branca em 100 bloquinhos e queremos que preencha os 100 */
+    background: url('../assets/home-background.svg') no-repeat; /*   .. = sai da pasta style e vá para uma acima */
+    background-position: 35vw bottom; /* viewport width = largura de 35 grudado no bottom*/
+}
+
+#page-home .content{
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    height: 100%;   
+    display: flex; /* Deixa tudo um do lado do outro */
+    flex-direction: column; /* altera o flow para coluna de cima para baixo*/
+}
+
+#page-home header{
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* espaco entre os elementos do header (logo ecoleta e link Cadastre um ponto)*/
+
+}
+
+#page-home header a {
+    display: flex; /* dizendo que os elementos de a ficarão um do lado do outro*/
+    color: var(--title-color);
+    font-weight: 700; /* peso da fonta. Como um negrito */
+    
+}
+
+#page-home header a span{
+    margin-right: 16px;
+    display: flex;
+    background-image: url('../assets/log-in.svg'); 
+    width: 20px; /* necessário ter uma altura e largura para funcionar */
+    height: 20px;
+
+}
+
+#page-home main {
+    max-width: 560px;
+    flex: 1; /* pega o tamanho do main e preenche todo o espaço*/
+    display: flex;
+    flex-direction: column; 
+    justify-content: center /* por conta do flex-directión, também tem a sua direção alterada. 
+    Vai pegar a altura de 600 e centralizar */
+
+}
+
+#page-home main h1 {
+    font-size: 54px;
+}
+
+#page-home main p {
+    font-size: 24px;
+    line-height: 38px; /* textos tem uma forma diferente de espaçar */
+    margin-top: 24px;
+}
+
+#page-home main a { /*configurar parametros do botão */
+
+    width: 100%;
+    max-width: 360px;
+    height: 72px;
+    border-radius: 8px; /* atalho para todas laterais de bordas */
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    background: var(--primary-color);
+    transition: 400ms; /* tempo de transição do hover */
+    
+}
+
+#page-home main a:hover { /* com o parametro hover é possível aplicar uma personalização especial */
+    background-color: #2fb86e;
+}
+
+#page-home main a span {
+    width: 72px;
+    height: 72px;
+    border-top-left-radius: 8px; /* para excluir detalhe da borda do botão por ele estar arredondado */
+    border-bottom-left-radius: 8px;
+    background-color: rgba(0,0,0,0.08); /* alpha é a transparencia */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page-home main a span::after { /* elementos que não tem no html mas vamos criar através do css. 
+    Serve para alterar ao inspecionar pagina HTML */
+
+    content: "";
+    background-image: url('../assets/search.svg');
+    width: 20px;
+    height: 20px;
+}
+
+#page-home main a strong {
+    flex: 1; /* faz crescer toda a caixa */
+    color: white;
+    text-align: center;
+}
